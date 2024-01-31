@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  candlesreadercombinedbinance:
+    restart: unless-stopped 
+    image: ${DOCKER_REGISTRY-}candlesreadercombined:latest
+    container_name: candlesreadercombinedbinance
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/CandlesReaderCombined/CandlesReaderCombined.Api/Dockerfile
+
+networks:
+  default:
+    name: trading
+    driver: bridge

@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  tradesreader:
+    restart: unless-stopped 
+    image: ${DOCKER_REGISTRY-}tradesreader:latest
+    container_name: tradesreaderbinance
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/TradesReader/TradesReader.Api/Dockerfile
+
+networks:
+  default:
+    name: trading
+    driver: bridge

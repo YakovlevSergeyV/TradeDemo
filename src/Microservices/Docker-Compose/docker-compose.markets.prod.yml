@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  markets.api:
+    environment:
+      - EventBusConnection=${PROD_SERVICE_BUS_CONNECTION}
+      - EventBusUserName=${TRADING_SERVICE_BUS_USERNAME}
+      - EventBusPassword=${TRADING_SERVICE_BUS_PASSWORD}     
+      - EventBusRetryCount=5
+      - SubscriptionClientName=Markets
+      - LogLevelDefault=Warning
+      - RequestTimeoutSecond=20
+      - SeqConnection=${PROD_SERVICE_SEQ_CONNECTION}
+      - SleepStartInMilliseconds=1000
+      - UseToken=False
+      - BinanceUrl=https://api1.binance.com
+      - BinanceFutureUrl=https://fapi.binance.com
+    ports:
+      - "5032:80"

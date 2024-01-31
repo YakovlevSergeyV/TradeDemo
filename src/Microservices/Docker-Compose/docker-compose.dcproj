@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" Sdk="Microsoft.Docker.Sdk">
+  <PropertyGroup Label="Globals">
+    <ProjectVersion>2.1</ProjectVersion>
+    <DockerTargetOS>Linux</DockerTargetOS>
+    <ProjectGuid>046c7e26-bc33-4632-b344-3b10574a88d0</ProjectGuid>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
+    <DockerServiceName>template.api</DockerServiceName>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include=".env" />
+    <None Include="docker-compose.candlesreadercombined.binance.prod.yml">
+      <DependentUpon>docker-compose.candlesreadercombined.binance.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.candlesreadercombined.binancefuture.prod.yml">
+      <DependentUpon>docker-compose.candlesreadercombined.binancefuture.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.candlesreadermarket.binance.prod.yml">
+      <DependentUpon>docker-compose.candlesreadermarket.binance.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.candlesreadermarket.binancefuture.prod.yml">
+      <DependentUpon>docker-compose.candlesreadermarket.binancefuture.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.candlesstorage.prod.yml">
+      <DependentUpon>docker-compose.candlesstorage.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.catalogstrategystorage.prod.yml">
+      <DependentUpon>docker-compose.catalogstrategystorage.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.exchangesstorage.prod.yml">
+      <DependentUpon>docker-compose.exchangesstorage.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.identity.prod.yml">
+      <DependentUpon>docker-compose.identity.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.markets.prod.yml">
+      <DependentUpon>docker-compose.markets.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.marketswebsocket.prod.yml">
+      <DependentUpon>docker-compose.marketswebsocket.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.ordersstorage.prod.yml">
+      <DependentUpon>docker-compose.ordersstorage.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.strategiesexecutor.binance.prod.yml">
+      <DependentUpon>docker-compose.strategiesexecutor.binance.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.strategiesexecutor.binancefuture.prod.yml">
+      <DependentUpon>docker-compose.strategiesexecutor.binancefuture.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.strategiesstorage.prod.yml">
+      <DependentUpon>docker-compose.strategiesstorage.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.strategiestemplates.prod.yml">
+      <DependentUpon>docker-compose.strategiestemplates.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.tradescoordinator.prod.yml">
+      <DependentUpon>docker-compose.tradescoordinator.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.tradesreader.binance.prod.yml">
+      <DependentUpon>docker-compose.tradesreader.binance.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.tradesstorage.prod.yml">
+      <DependentUpon>docker-compose.tradesstorage.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.candlesreadercombined.yml" />
+    <None Include="docker-compose.candlesreadercombined.binance.yml" />
+    <None Include="docker-compose.candlesreadercombined.binancefuture.yml" />
+    <None Include="docker-compose.candlesreadermarket.binance.yml" />
+    <None Include="docker-compose.candlesreadermarket.binancefuture.yml" />
+    <None Include="docker-compose.candlesreadermarket.yml" />
+    <None Include="docker-compose.candlesstorage.yml" />
+    <None Include="docker-compose.catalogstrategystorage.yml" />
+    <None Include="docker-compose.exchangesstorage.yml" />
+    <None Include="docker-compose.identity.yml" />
+    <None Include="docker-compose.markets.yml" />
+    <None Include="docker-compose.marketswebsocket.yml" />
+    <None Include="docker-compose.ordersstorage.yml" />
+    <None Include="docker-compose.strategiesexecutor.binance.yml" />
+    <None Include="docker-compose.strategiesexecutor.binancefuture.yml" />
+    <None Include="docker-compose.strategiesexecutor.yml" />
+    <None Include="docker-compose.strategiesstorage.yml" />
+    <None Include="docker-compose.strategiestemplates.yml" />
+    <None Include="docker-compose.tradescoordinator.yml" />
+    <None Include="docker-compose.tradesreader.yml" />
+    <None Include="docker-compose.tradesreader.binance.yml" />
+    <None Include="docker-compose.tradesstorage.yml" />
+    <None Include=".dockerignore" />
+  </ItemGroup>
+</Project>

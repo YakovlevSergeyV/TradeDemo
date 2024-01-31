@@ -1,0 +1,19 @@
+﻿ALTER TABLE [TradeInfo] RENAME TO [TradeInfo_tmp];
+
+CREATE TABLE IF NOT EXISTS [TradeInfo] (
+	[Guid] TEXT PRIMARY KEY NOT NULL, 
+	[Exchange] TEXT NOT NULL, 
+	[Symbol] TEXT NOT NULL, 
+	[TimestampMin] INTEGER NOT NULL, 
+	[TimestampMax] INTEGER NOT NULL, 
+	[AmountAvgAsk] INTEGER NOT NULL, 
+	[AmountAvgBid] INTEGER NOT NULL);
+
+INSERT INTO [TradeInfo] ([Guid], [Exchange], [Symbol], [TimestampMin], [TimestampMax], [AmountAvgAsk], [AmountAvgBid])
+SELECT [Guid], [Exchange], [Symbol], [TimestampMin], [TimestampMax], 0 as [AmountAvgAsk], 0 as [AmountAvgBid] 
+FROM [TradeInfo_tmp];
+
+DROP TABLE [TradeInfo_tmp];
+
+UPDATE [TradeInfo] SET [AmountAvgAsk] = (SELECT ROUND(ABS(AVG([Amount])),3) FROM [Trade] WHERE Amount<0);
+UPDATE [TradeInfo] SET [AmountAvgBid] = (SELECT ROUND(ABS(AVG([Amount])),3) FROM [Trade] WHERE Amount>0);

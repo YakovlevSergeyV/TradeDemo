@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  strategiesexecutorbinancefuture.api:
+    restart: unless-stopped 
+    image: ${DOCKER_REGISTRY-}strategiesexecutor:latest
+    container_name: strategiesexecutorbinancefuture
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/StrategiesExecutor/StrategiesExecutor.Api/Dockerfile
+
+networks:
+  default:
+    name: trading
+    driver: bridge

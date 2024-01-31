@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  tradesstorage.api:
+    restart: unless-stopped 
+    image: ${DOCKER_REGISTRY-}tradesstorage:latest
+    container_name: tradesstorage
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/TradesStorage/TradesStorage.Api/Dockerfile
+
+networks:
+  default:
+    name: trading
+    driver: bridge

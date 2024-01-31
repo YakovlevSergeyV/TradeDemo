@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  candlesstorage.api:
+    restart: unless-stopped 
+    image: ${DOCKER_REGISTRY-}candlesstorage:latest
+    container_name: candlesstorage
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/CandlesStorage/CandlesStorage.Api/Dockerfile
+
+networks:
+  default:
+    name: trading
+    driver: bridge

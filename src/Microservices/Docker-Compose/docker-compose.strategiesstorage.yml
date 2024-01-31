@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  strategiesstorage.api:
+    restart: unless-stopped 
+    image: ${DOCKER_REGISTRY-}strategiesstorage:latest
+    container_name: strategiesstorage
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/StrategiesStorage/StrategiesStorage.Api/Dockerfile
+
+networks:
+  default:
+    name: trading
+    driver: bridge

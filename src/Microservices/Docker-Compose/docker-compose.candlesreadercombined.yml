@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+
+  candlesreadercombined:
+    restart: unless-stopped 
+    image: ${DOCKER_REGISTRY-}candlesreadercombined:latest
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/CandlesReaderCombined/CandlesReaderCombined.Api/Dockerfile
+

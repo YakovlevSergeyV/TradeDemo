@@ -1,0 +1,25 @@
+version: '3.5'
+
+services:
+   candlesreadercombinedbinancefuture:
+    environment:
+      - EventBusConnection=${PROD_SERVICE_BUS_CONNECTION}
+      - EventBusUserName=${TRADING_SERVICE_BUS_USERNAME}
+      - EventBusPassword=${TRADING_SERVICE_BUS_PASSWORD}     
+      - EventBusRetryCount=5
+      - UseResilientHttp=False
+      - UseToken=False
+      - SubscriptionClientName=CandlesReaderCombinedBinance
+      - SeqConnection=${PROD_SERVICE_SEQ_CONNECTION}
+      - ExchangeName=BINANCEFUTURE
+      - Proxy=
+      - SleepIntervalInMillesekonds=500
+      - SleepStartInMilliseconds=16000
+      - LogLevelDefault=Warning
+      - Urls__CandleStorage=http://${PROD_CANDLE_STORAGE_SERVICE}
+      - Urls__Markets=http://${PROD_MARKETS_SERVICE}
+      - Urls__MarketsWebSocket=http://${PROD_MARKETSWEBSOCKET_SERVICE}
+      - Urls__Identity=http://${PROD_IDENTITY_SERVICE}
+    ports:
+      - "5041:80"
+

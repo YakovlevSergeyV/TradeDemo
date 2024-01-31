@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  catalogstrategystorage.api:
+    restart: unless-stopped 
+    image: ${DOCKER_REGISTRY-}catalogstrategystorage:latest
+    container_name: catalogstrategystorage
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/CatalogStrategyStorage/CatalogStrategyStorage.Api/Dockerfile
+
+networks:
+  default:
+    name: trading
+    driver: bridge

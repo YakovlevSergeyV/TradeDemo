@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="UpgradeDb\Queries\UpgradeTo_1_0_1_0.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="UpgradeDb\Queries\UpgradeTo_1_0_1_0.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <ProjectReference Include="..\..\..\..\Common\Dal.SQLite\Dal.SQLite.csproj" />
+  </ItemGroup>
+</Project>

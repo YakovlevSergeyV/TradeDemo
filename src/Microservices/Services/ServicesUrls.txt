@@ -1,0 +1,47 @@
+
+TradesStorage                          : http://localhost:5000
+TradesCoordinator                      : http://localhost:5002
+TradesService						   : http://localhost:5005
+TradesReader - Bitfinex                : http://localhost:5004
+TradesReader - Binance                 : http://localhost:5006
+TradesReader - BinanceFuture           : http://localhost:5008
+
+OrderBooksStorage                      : http://localhost:5001
+OrderBooksCoordinator                  : http://localhost:5003
+OrderBooksReader - Binance             : http://localhost:5007
+
+StateStorage                           : http://localhost:5011
+OrdersStorageOld                       : http://localhost:5012
+OrdersStorage                          : http://localhost:5016
+OrdersReader                           : http://localhost:5014
+OrdersWriter                           : http://localhost:5015
+
+CandleStorage                          : http://localhost:5020
+CandlesReader          - Binance       : http://localhost:5021
+CandlesReader          - Bitfinex      : http://localhost:5040
+CandlesReaderMarket    - BinanceFuture : http://localhost:5041
+CandlesReaderCombined  - Binance       : http://localhost:5042
+CandlesReaderCombined  - Bitfinex      : http://localhost:5043
+
+ExchangesStorage                       : http://localhost:5024
+CatalogStrategyStorage                 : http://localhost:5031
+Markets                                : http://localhost:5032
+Identity                               : http://localhost:5033
+MarketsWebSocket                       : http://localhost:5034
+
+--- Utils -------------------------------------------
+ArchivingDataTrade                     : http://localhost:5060
+ArchivingDataCandle                    : http://localhost:5061
+
+--- Optimizers --------------------------------------
+OptimizerCoordinator                   : http://localhost:5073
+OptimizerCalculation                   : http://localhost:5074
+
+
+--- Strategies --------------------------------------
+StrategiesStorage                      : http://localhost:5018
+StrategiesTemplates                    : http://localhost:5019
+
+StrategiesExecutor - Bitfinex          : http://localhost:5203
+StrategiesExecutor - Binance           : http://localhost:5204
+StrategiesExecutor - BinanceFuture     : http://localhost:5205

@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  markets.api:
+    restart: unless-stopped 
+    image: ${DOCKER_REGISTRY-}markets:latest
+    container_name: markets
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/Markets/Markets.Api/Dockerfile
+
+networks:
+  default:
+    name: trading
+    driver: bridge

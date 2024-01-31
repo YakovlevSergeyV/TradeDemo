@@ -1,0 +1,24 @@
+version: '3.5'
+
+services:
+   candlesreadermarket:
+    environment:
+      - EventBusConnection=${PROD_SERVICE_BUS_CONNECTION}
+      - EventBusUserName=${TRADING_SERVICE_BUS_USERNAME}
+      - EventBusPassword=${TRADING_SERVICE_BUS_PASSWORD}     
+      - EventBusRetryCount=5
+      - UseResilientHttp=False
+      - SubscriptionClientName=CandlesReaderMarketBinance
+      - SeqConnection=${PROD_SERVICE_SEQ_CONNECTION}
+      - ExchangeName=BINANCE
+      - Proxy=
+      - RequestTimeoutSecond=30
+      - MaximumNumberOfLaunchedCandleReaders=6
+      - SleepIntervalInSeconds=2
+      - LogLevelDefault=Warning
+      - Urls__CandleStorage=http://${PROD_CANDLE_STORAGE_SERVICE}
+      - Urls__Markets=http://${PROD_MARKETS_SERVICE}
+      - Urls__Identity=http://${PROD_IDENTITY_SERVICE}
+    ports:
+      - "5042:80"
+

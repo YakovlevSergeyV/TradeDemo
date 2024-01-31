@@ -1,0 +1,27 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "template.api": "StartWithoutDebugging",
+        "candlesreadermarket.api": "StartDebugging",
+        "candlesstorage.api": "StartDebugging",
+        "catalogstrategystorage.api": "StartDebugging",
+        "exchangesstorage.api": "StartDebugging",
+        "ordersstorage.api": "StartDebugging",
+        "strategiesexecutor.api": "StartDebugging",
+        "strategiesstorage.api": "StartDebugging",
+        "strategiestemplates.api": "StartDebugging",
+        "markets.api": "StartDebugging",
+        "identity.api": "StartDebugging",
+        "archivingdatacandle.api": "StartDebugging",
+        "tradesstorage.api": "StartDebugging",
+        "tradescoordinator.api": "StartDebugging",
+        "tradesreader.api": "StartDebugging",
+        "markets.websocket.api": "StartDebugging",
+        "candlesreadercombined.api": "StartDebugging"
+      }
+    }
+  }
+}

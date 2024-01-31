@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  identity.api:
+    restart: unless-stopped 
+    image: ${DOCKER_REGISTRY-}identity:latest
+    container_name: identity
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/Identity/Identity.Api/Dockerfile
+
+networks:
+  default:
+    name: trading
+    driver: bridge

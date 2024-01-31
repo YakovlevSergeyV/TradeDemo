@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  template.api:
+    image: ${DOCKER_REGISTRY-}templateapi
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/Template/Template.Api/Dockerfile
+
+

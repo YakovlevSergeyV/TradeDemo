@@ -1,0 +1,18 @@
+﻿GlobalSpace.ExchangeApi.Infrastructure.ApiException: StatusCode: 429, ReasonPhrase: 'Too Many Requests', Version: 1.1, Content: System.Net.Http.NoWriteNoSeekStreamContent, Headers:
+{
+  Cache-Control: no-cache
+  Connection: close
+  Date: Thu, 13 Sep 2018 08:35:18 GMT
+  Transfer-Encoding: chunked
+  Retry-After: 65
+  Server: cloudflare-nginx
+  Set-Cookie: __cfduid=df7fb153f62a9a6d908f33c4db16138051536827718; expires=Fri, 13-Sep-19 08:35:18 GMT; path=/; domain=.bitfinex.com; HttpOnly
+  Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+  CF-RAY: 4599479949378e79-DME
+  Content-Type: application/json
+}
+   at GlobalSpace.ExchangeApi.Infrastructure.RequestGetNew.SendAsync(HttpRequestMessage message) in C:\Work\Trading\src\Common\ExchangeApi\Infrastructure\RequestGet.cs:line 23
+   at GlobalSpace.ExchangeApi.Abstract.DataReadingAbstract.TradesReading(ParametersTrade parameters) in C:\Work\Trading\src\Common\ExchangeApi\Abstract\DataReadingAbstract.cs:line 57
+   at GlobalSpace.ExchangeApi.Infrastructure.ServiceExchange.GetTrades(ParametersTrade parameters) in C:\Work\Trading\src\Common\ExchangeApi\Infrastructure\ServiceExchange.cs:line 47
+   at TradesReader.Api.Infrastructure.Command.ReadTrade.RunInner() in C:\Work\Trading\src\Services\TradesReader\TradesReader.Api\Infrastructure\Command\ReadTrade.cs:line 79
+   at TradesReader.Api.Infrastructure.Command.ReadTrade.Run() in C:\Work\Trading\src\Services\TradesReader\TradesReader.Api\Infrastructure\Command\ReadTrade.cs:line 62

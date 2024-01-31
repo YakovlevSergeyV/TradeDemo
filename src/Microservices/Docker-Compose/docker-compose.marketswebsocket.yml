@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  markets.websocket.api:
+    restart: unless-stopped 
+    image: ${DOCKER_REGISTRY-}marketswebsocket:latest
+    container_name: marketswebsocket
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/Markets.WebSocket/Markets.WebSocket.Api/Dockerfile
+
+networks:
+  default:
+    name: trading
+    driver: bridge

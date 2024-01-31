@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  identity.api:
+    environment:
+      - EventBusConnection=${PROD_SERVICE_BUS_CONNECTION}
+      - EventBusUserName=${TRADING_SERVICE_BUS_USERNAME}
+      - EventBusPassword=${TRADING_SERVICE_BUS_PASSWORD}     
+      - EventBusRetryCount=5
+      - SubscriptionClientName=Identity
+      - LogLevelDefault=Warning
+      - SleepStartInMilliseconds=1000
+      - SeqConnection=${PROD_SERVICE_SEQ_CONNECTION}
+    ports:
+      - "5033:80"

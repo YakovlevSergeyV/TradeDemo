@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+  exchangesstorage.api:
+    environment:
+      - EventBusConnection=${PROD_SERVICE_BUS_CONNECTION}
+      - EventBusUserName=${TRADING_SERVICE_BUS_USERNAME}
+      - EventBusPassword=${TRADING_SERVICE_BUS_PASSWORD}     
+      - EventBusRetryCount=5
+      - SubscriptionClientName=ExchangesStorage
+      - LogLevelDefault=Warning
+      - SeqConnection=${PROD_SERVICE_SEQ_CONNECTION}
+      - SleepStartInMilliseconds=5000
+      - DatabaseDir=/Databases
+    ports:
+      - "5024:80"   
+    volumes:
+      - /Trading/Databases:/Databases

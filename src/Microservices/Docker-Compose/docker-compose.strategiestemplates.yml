@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+
+  strategiestemplates.api:
+    image: ${DOCKER_REGISTRY-}strategiestemplates:latest
+    container_name: strategiestemplates
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/StrategiesTemplates/StrategiesTemplates.Api/Dockerfile
+
+networks:
+  default:
+    name: trading
+    driver: bridge

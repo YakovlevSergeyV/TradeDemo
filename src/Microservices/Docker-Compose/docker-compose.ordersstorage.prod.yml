@@ -1,0 +1,20 @@
+version: '3.5'
+
+services:
+  ordersstorage.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - AzureServiceBusEnabled=False
+      - EventBusConnection=${PROD_SERVICE_BUS_CONNECTION}
+      - EventBusUserName=${TRADING_SERVICE_BUS_USERNAME}
+      - EventBusPassword=${TRADING_SERVICE_BUS_PASSWORD}     
+      - EventBusRetryCount=5
+      - SubscriptionClientName=OrdersStorage
+      - LogLevelDefault=Warning
+      - SeqConnection=${PROD_SERVICE_SEQ_CONNECTION}
+      - SleepStartInMilliseconds=6000
+      - DatabaseDir=/Databases
+    ports:
+      - "5016:80"   
+    volumes:
+      - /Trading/Databases:/Databases

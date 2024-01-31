@@ -1,0 +1,40 @@
+
+Service name                            SleepStartInMilliseconds
+----------------------------------------------------------------
+ExchangesStorage                       : 4000
+Markets                                : 5000
+MarketsWebSocket                       : 5000
+Identity                               : 5000
+TradesStorage                          : 6000
+TradesCoordinator                      : 6000
+CandleStorage                          : 7000
+OrdersStorage                          : 8000
+StrategiesStorage                      : 8000
+StrategiesTemplates                    : 8000
+CatalogStrategyStorage                 : 8000
+
+--- TradesReader ------------------------------------
+TradesReader - Bitfinex                : 15000
+TradesReader - Binance                 : 16000
+TradesReader - BinanceFuture           : 17000
+
+--- CandlesReader -----------------------------------
+CandlesReader - Binance                : 20000
+CandlesReader - Bitfinex               : 21000
+
+--- Optimizers --------------------------------------
+OptimizerCoordinator                   : 20000
+OptimizerCalculation                   : 22000
+
+--- Strategies --------------------------------------
+
+StrategiesExecutor - Bitfinex          : 20000
+StrategiesExecutor - Binance           : 21000
+StrategiesExecutor - BinanceFuture     : 22000
+
+
+--- Utils -------------------------------------------
+ArchivingDataTrade                     : 25000
+ArchivingDataCandle                    : 25000
+
+TradesService						   : 30000

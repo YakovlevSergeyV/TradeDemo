@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  ordersstorage.api:
+    restart: unless-stopped 
+    image: ${DOCKER_REGISTRY-}ordersstorage:latest
+    container_name: ordersstorage
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/OrdersStorage/OrdersStorage.Api/Dockerfile
+
+networks:
+  default:
+    name: trading
+    driver: bridge

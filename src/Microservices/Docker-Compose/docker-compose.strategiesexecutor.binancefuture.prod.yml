@@ -1,0 +1,25 @@
+version: '3.5'
+
+services:
+  strategiesexecutorbinancefuture.api:
+    environment:
+      - EventBusConnection=${PROD_SERVICE_BUS_CONNECTION}
+      - EventBusUserName=${TRADING_SERVICE_BUS_USERNAME}
+      - EventBusPassword=${TRADING_SERVICE_BUS_PASSWORD}     
+      - EventBusRetryCount=5
+      - UseResilientHttp=False
+      - UseToken=False
+      - SubscriptionClientName=StrategiesExecutorBinanceFuture
+      - SeqConnection=${PROD_SERVICE_SEQ_CONNECTION}
+      - ExchangeName=BINANCEFUTURE
+      - Proxy=
+      - LogLevelDefault=Warning
+      - SleepStartInMilliseconds=22000
+      - Urls__Markets=http://${PROD_MARKETS_SERVICE}
+      - Urls__Identity=http://${PROD_IDENTITY_SERVICE}
+      - Urls__CandleStorage=http://${PROD_CANDLE_STORAGE_SERVICE}
+      - Urls__OrderStorage=http://${PROD_ORDER_STORAGE_SERVICE}
+      - Urls__StrategyStorage=http://${PROD_STRATEGIES_STORAGE_SERVICE}
+      - Urls__ExchangeStorage=http://${PROD_EXCHANGE_STORAGE_SERVICE}
+    ports:
+      - "5205:80"

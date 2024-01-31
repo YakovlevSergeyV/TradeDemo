@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+
+  tradescoordinator.api:
+    image: ${DOCKER_REGISTRY-}tradescoordinator:latest
+    container_name: tradescoordinator
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/TradesCoordinator/TradesCoordinator.Api/Dockerfile
+
+networks:
+  default:
+    name: trading
+    driver: bridge

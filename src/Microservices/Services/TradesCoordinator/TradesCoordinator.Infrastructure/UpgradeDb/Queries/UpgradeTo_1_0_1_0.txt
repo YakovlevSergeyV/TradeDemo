@@ -1,0 +1,16 @@
+﻿ALTER TABLE [CurrencyPairs] RENAME TO [CurrencyPairs_tmp];
+
+CREATE TABLE IF NOT EXISTS [CurrencyPairs] (
+	[GUID] TEXT PRIMARY KEY NOT NULL, 
+	[CurrencyPairName] TEXT NOT NULL, 
+	[ExchangeName] TEXT NOT NULL, 
+	[TimestampInitial] INTEGER NOT NULL, 
+	[LastCount] INTEGER NOT NULL, 
+	[LastIntervalMin] INTEGER NOT NULL);
+
+
+INSERT INTO [CurrencyPairs] ([GUID], [CurrencyPairName], [ExchangeName], [TimestampInitial], [LastCount], [LastIntervalMin])
+SELECT [GUID], [CurrencyPairName], [ExchangeName], [TimestampInitial], 0 as [LastCount], 0 as [LastIntervalMin] 
+FROM [CurrencyPairs_tmp];
+
+DROP TABLE [CurrencyPairs_tmp];

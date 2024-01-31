@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+
+  strategiesexecutor.api:
+    restart: unless-stopped 
+    image: ${DOCKER_REGISTRY-}strategiesexecutor:latest
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/StrategiesExecutor/StrategiesExecutor.Api/Dockerfile
+

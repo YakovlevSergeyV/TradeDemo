@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  exchangesstorage.api:
+    restart: unless-stopped 
+    image: ${DOCKER_REGISTRY-}exchangesstorage:latest
+    container_name: exchangesstorage
+    build:
+      context: ../../..
+      dockerfile: src/Microservices/Services/ExchangesStorage/ExchangesStorage.Api/Dockerfile
+
+networks:
+  default:
+    name: trading
+    driver: bridge
