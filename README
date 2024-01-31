@@ -1,0 +1,10 @@
+Пример микросервисной архитектуры для ознакомления с кодом.
+
+Описание микросервсиов.
+	- TradesStorage.Api (...\src\Microservices\Services\TradesStorage\TradesStorage.Api):
+		хранилище сделок
+	- TradesCoordinator.Api (...\src\Microservices\Services\TradesCoordinator\TradesCoordinator.Api):
+		координатор чтения данных 
+	- TradesReader.Api (...\src\Microservices\Services\TradesReader\TradesReader.Api):
+	    чтение данных 
+	
